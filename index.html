@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript site ifm Missing People website</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+        <h1 id="MEDLEMSTEST"></h1>
+    <span id="container">
+        <section id="testkolonne">
+            <div>
+            <br>
+            <br>
+            <h2>PATRULJEFØRER?</h2>
+            <br>
+            <p style="text-align:left"><img src="patruljeforer.png" id="patruljeforer" width="50%";>
+            <br><br><br>
+            <form>
+                    <p><b>Test dine evner som patruljefører på en sjov og anderledes måde med disse 7 spørgsmål:</b></p><br>
+                    <br>
+                    <p>Hvordan betragter du selv dine lederegenskaber? <br>(1 = mindre gode, 5 = særligt gode)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt1" id="vurdFelt1">
+                    <br>
+                    <br><p>Kan du rykke ud til en "missing-people"-alarm midt om natten?<br>(1 = sjældent, 5 = altid)</p>
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt2" id="vurdFelt2">
+                    <br><br>
+                    <p>Har du egen bil eller adgang til bil i en pludseligt opstået situation?<br>(1 = sjældent adgang til bil, 5 = altid adgang til bil)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt3" id="vurdFelt3">
+                    <br>
+                    <br><p>Hvordan vil du reagere ved fundet af en såret eller livløs person?<br>(1 = Jeg går let i panik, 5 = jeg bevarer roen)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt4" id="vurdFelt4">
+                    <br><br>
+                    <p>Er du god til at lytte til og trøste andre personer?<br>(1 = sjældent, 5 = altid)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt5" id="vurdFelt5">
+                    <br><br>
+                    <p>Hvor god er du til at træffe beslutninger i en fart?<br>(1 = sjældent god, 5 = ofte god)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt6" id="vurdFelt6">
+                    <br><br>
+                    <p>Har du viden eller erfaring fra tidligere omkring forsvundne personer?<br>(1 = ingen erfaring, 5 = en del erfaring)</p> 
+                    <input type="number" number max="5" min="1" step="1" value="1" name="vurdFelt7" id="vurdFelt7">
+                    <br><br><br>
+                    <br>
+                    <button type="button" onClick="TESTSVAR()">Tryk her for dit testsvar</button>
+                    <br><br>
+                    <p id="testsvar">Resultatet af beregningen vises her</p>
+            </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>1 - 2: Tag en snak med os omkring kommende kurser</p>
+            <p>2 - 3: Du er godt på vej ... kontakt os og hør nærmere</p>
+            <p>3 - 4: Hvis du allerede er aktiv i MP, så meld dig til flere kurser</p>
+            <p>4 - 5: Du virker til at have mulighederne og talentet. Kontakt os! </p>
+        </section>
+    </span>
+    </body>
+</html>
+
+<script>
+            function TESTSVAR(){
+            var test1, test2, test3, test4, test5, test6, test7;
+            test1 = document.getElementById("vurdFelt1").value;
+            test2 = document.getElementById("vurdFelt2").value;
+            test3 = document.getElementById("vurdFelt3").value;
+            test4 = document.getElementById("vurdFelt4").value;
+            test5 = document.getElementById("vurdFelt5").value;
+            test6 = document.getElementById("vurdFelt6").value;
+            test7 = document.getElementById("vurdFelt7").value;
+            
+            var testsvar = (test1/7+test2/7+test3/7+test4/7+test5/7+test6/7+test7/7); // testsvar divideret med 7
+            testsvar=(testsvar.toFixed(1)); //testsvar afrundet til 1 decimal
+            
+            //testsvar med resultat, smiley og kommentar
+            if (testsvar < 2){
+                document.getElementById("testsvar").innerHTML = "Dit resultat er: " + testsvar + " og vi glæder os til at møde dig som medlem &#128512; <br><br> Tag en snak med din lokale forening om de mange muligheder i foreningen." ;
+           
+            } else if 
+                (testsvar >= 2 && testsvar < 3) {
+                document.getElementById("testsvar").innerHTML = "Dit resultat er: " + testsvar + " og vi glæder os til at møde dig som medlem &#128512; <br><br> Du har potentiale, og vi glæder os til at fortælle mere om kurserne." ; 
+      
+            } else if 
+                (testsvar >= 3 && testsvar < 4) {
+                document.getElementById("testsvar").innerHTML = "Dit resultat er: " + testsvar + " og vi glæder os til at møde dig som medlem &#128512; <br><br> Du er rigig godt på og har måske potentiale til at gå patruljefører-vejen." ;
+  
+            } else {
+                document.getElementById("testsvar").innerHTML = "Dit resultat er: " + testsvar + "  og vi glæder os til at møde dig som medlem &#128512; <br><br> Du har sandsynligvis talent for at uddanne dig til patruljefører eller andre funktioner som dronepilot, hundefører el.lign." 
+            }
+            } 
+</script>
